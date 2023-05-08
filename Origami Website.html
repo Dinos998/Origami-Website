@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+
+    body {
+        margin: 0;
+        background: white;
+    }
+
+    .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: fixed; /* Set the navbar to fixed position */
+        top: 0; /* Position the navbar at the top of the page */
+        width: 100%; /* Full width */
+    }
+
+    .button {
+        color: black;
+        text-align: center;
+        display: inline-block;
+        font-size: 18px;
+        overflow:auto;
+        cursor: pointer;
+        font-family: 'Times New Roman';
+        text-align: center;
+        background-color: transparent;
+    }
+
+    .navButton {
+        padding: 10px;
+        border: none;
+        background: none;
+        color: white;
+        font-weight: 150;
+    }
+
+    .navButton:hover {
+        background-color: #ccc;
+        color: black;
+    }
+
+    .tabcontent {
+        padding: 16px;
+        margin: 10px;
+        display: none;
+        height: 100%;
+        margin-top: 30px;
+    }
+
+    .droptoggle {
+        display: block;
+        color: white;
+        background-color: rgb(100,100,100);
+        margin-top: 30px;
+        font-size: 30px;
+        padding: 10px;
+        width: 100%;
+        border: solid 1px black;
+        font-weight: bold;
+        max-width: 300px;
+    }
+
+    .dropdown-buttons {
+        display: grid;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .dropdown-content {
+        display: none;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .dropbtn {
+        font-size: 20px;
+        background-color:#eee;
+        border: solid 1px black;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .dropbtn:hover {
+        background-color:rgb(210, 210, 210);
+    }
+
+    .img {
+        height: 200%;
+        max-height: 500px;
+    }
+
+    .tblImg {
+        width: 250px;
+    }
+
+    .table, th, td {
+        width: 100%;
+        text-align:center;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        background-color: white;
+        max-width: 450px;
+    }
+
+    .table, th {
+        font-size:30px;
+        background-color:rgb(210, 210, 210);
+        font-weight: bold;
+    }
+
+    .table, td {
+        font-size: 25px;
+        font-weight: 150;
+    }
+
+    .h1 {
+        font-size: 40px;
+    }
+
+    .h2 {
+        font-size: 30px;
+    }
+
+    .p {
+        font-size: 22px;
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <button class="button navButton" onclick="openButton('0');window.scrollTo(0, 0)">Home</button>
+        <button class="button navButton" onclick="openButton('1');window.scrollTo(0, 0)">Basic Folds</button>
+        <button class="button navButton" onclick="openButton('2');window.scrollTo(0, 0)">Beginner</button>
+        <button class="button navButton" onclick="openButton('3');window.scrollTo(0, 0)">Intermediate</button>
+		<button class="button navButton" onclick="openButton('4');window.scrollTo(0, 0)">Advanced</button>
+    </div>
+
+    <div id="-1" class="tabcontent errortab">
+        <h2>This page is not available yet. Please come back later!</h2>
+    </div>
+
+    <div id="0" class="tabcontent">
+        <h1 class="h1">Welcome to My Origami Page!</h1>
+        <p class="p">Use the tabs on the top to navigate throughout the website.</p>
+        <p class="p">All folds and models are recommended to be done with video assistance.</p>
+        <p class="p">If you are a beginner, I would recommend starting with the basic folds.</p>
+        <img src = "Crane Icon.png" alt = "Crane Icon" class="img">
+    </div>
+
+    <div id="1" class="tabcontent">
+        <h1 class="h1">Basic Folds</h1>
+        <p class="p">These are the basic folds needed to fold the vast majority of models. This can serve as a reference or refresher if you have folded origami before.</p>
+        <table class = "table">
+            <tr>
+                <th>Name</th>
+                <th>Image</th>
+            </tr>
+            <tr>
+                <td>Valley Fold</td>
+                <td><img src="Valley Fold Tbl.png" class="img tblImg" alt="Valley Fold"></td>
+            </tr>
+            <tr>
+                <td>Mountain Fold</td>
+                <td><img src="Mountain Fold Tbl.png" class="img tblImg" alt="Mountain Fold"></td>
+            </tr>
+            <tr>
+                <td>Fold & Unfold</td>
+                <td><img src="Fold & Unfold Tbl.png" class="img tblImg" alt="Fold & Unfold"></td>
+            </tr>
+            <tr>
+                <td>Crease</td>
+                <td><img src="Crease Tbl.png" class="img tblImg" alt="Crease"></td>
+            </tr>
+        </table>
+        
+        <button class="button droptoggle">Types of Folds</button>
+        <div id="myDropdown" class="dropdown-buttons">
+            <button class="button dropbtn" onclick = "openButton('1.1');scrollBottom()">Valley Fold</button>
+            <button class="button dropbtn" onclick = "openButton('1.2');scrollBottom()">Mountain Fold</button>
+            <button class="button dropbtn" onclick = "openButton('1.3');scrollBottom()">Squash Fold</button>
+            <button class="button dropbtn" onclick = "openButton('1.4');scrollBottom()">Rabbit Ear Fold</button>
+        </div>
+    </div>
+
+    <div id="1.1" class="dropdown-content">
+        <h2>Valley Fold</h2>
+        <p>Fold the paper towards you as seen in the image below:</p>
+        <img src = "Valley Fold.png" alt = "Valley Fold Instructions" class="img">
+    </div>
+
+    <div id="1.2" class="dropdown-content">
+    <h2>Mountain Fold</h2>
+        <p>Fold the paper away from you as seen in the image below:</p>
+        <img src = "Mountain Fold.png" alt = "Mountain Fold Instructions" class="img">
+    </div>
+
+    <div id="1.3" class="dropdown-content">
+        <h2>Squash Fold</h2>
+        <p>Take a paper that has two layers. Pull up the top flap without touching the bottom layer. Pull the outer corner to the centre and flatten the paper.</p>
+        <img src="Squash Fold.png" alt="Squash Fold Instructions" class="img">
+    </div>
+
+    <div id="1.4" class="dropdown-content">
+        <h2>Rabbit Ear Fold</h2>
+        <p>Fold the paper from its centre towards the middle line, then repeat on the other side. Afterwards, push both creases towards the middle and squash the paper down.</p>
+        <img src="Rabbit Ear Fold.png" alt="Rabbit Ear Fold Instructions" class="img">
+    </div>
+
+    <div id="2" class="tabcontent">
+        <h1 class="h1">Beginner Models</h1>
+        <p class="p">These beginner models teach more complicated folds which are great bridges between simple folds and intermediate models.</p>
+        <button class="button droptoggle">Beginner Models</button>
+        <div id="myDropdown" class="dropdown-buttons">
+            <button class="button dropbtn" onclick = "openButton(2.1)">Crane</button>
+            <button class="button dropbtn" onclick = "openButton(2.2)">Modular Box</button>
+        </div>
+    </div>
+
+    <div id="2.1" class="tabcontent">
+        <h2 class="h2">Crane</h2>
+        <p class="p">The crane model is made up of one square piece of paper. In Japanese Tradition, the japanese crane or orizuru (ori- (folded) and -tsuru (crane)) symbolises honor and loyalty.</p>
+        <button class="button droptoggle">Crane Instructions</button>
+        <div id="myDropdown" class="dropdown-buttons">
+            <button class="button dropbtn" onclick = "openButton('2.1.1');scrollBottom()">Page 1</button>
+            <button class="button dropbtn" onclick = "openButton('2.1.2');scrollBottom()">Page 2</button>
+            <button class="button dropbtn" onclick = "openButton('2.1.3');scrollBottom()">Page 3</button>
+            <button class="button dropbtn" onclick = "openButton('2.1.4');scrollBottom()">Page 4</button>
+            <button class="button dropbtn" onclick = "openButton('2.1.5');scrollBottom()">Page 5</button>
+            <button class="button dropbtn" onclick = "openButton('2.1.6');scrollBottom()">Page 6</button>
+            <button class="button dropbtn" onclick = "openButton('2.1.7');scrollBottom()">Page 7</button>
+        </div>
+    </div>
+
+    <div id="2.1.1" class="dropdown-content">
+        <h3>Page 1</h3>
+        <img src="Crane 1.jpg" alt="Crane Instructions Page 1" class="img">
+    </div>
+
+    <div id="2.1.2" class="dropdown-content">
+        <h3>Page 2</h3>
+        <img src="Crane 2.jpg" alt="Crane Instructions Page 2" class="img">
+    </div>
+
+    <div id="2.1.3" class="dropdown-content">
+        <h3>Page 3</h3>
+        <img src="Crane 3.jpg" alt="Crane Instructions Page 3" class="img">
+    </div>
+
+    <div id="2.1.4" class="dropdown-content">
+        <h3>Page 4</h3>
+        <img src="Crane 4.jpg" alt="Crane Instructions Page 4" class="img">
+    </div>
+
+    <div id="2.1.5" class="dropdown-content">
+        <h3>Page 1</h3>
+        <img src="Crane 5.jpg" alt="Crane Instructions Page 5" class="img">
+    </div>
+
+    <div id="2.1.6" class="dropdown-content">
+        <h3>Page 6</h3>
+        <img src="Crane 6.jpg" alt="Crane Instructions Page 6" class="img">
+    </div>
+
+    <div id="2.1.7" class="dropdown-content">
+        <h3>Page 7</h3>
+        <img src="Crane 7.jpg" alt="Crane Instructions Page 7" class="img">
+    </div>
+</body>
+
+
+<script>
+    onload = function landingPage(){openButton('0')}
+
+    //opens each tab and closes the previous
+    function openButton(id)
+    {
+        if(id % 1 == 0)
+            removetab(document.getElementsByClassName("tabcontent"));
+        //remove error tab
+        removetab(document.getElementsByClassName("errortab"));
+        //remove dropdowns if shown
+        removetab(document.getElementsByClassName("dropdown-content"));
+        try
+        {
+            document.getElementById(id).style.display = "block";
+        }catch (TypeError)
+        {
+            openButton(-1);
+        }
+    }
+
+    function removetab(tabcontent)
+    {
+        for (i = 0; i < tabcontent.length; i++)
+        {
+            tabcontent[i].style.display = "none";
+        }
+    }
+
+    function scrollBottom()
+    {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+</script>
+
+</html>
